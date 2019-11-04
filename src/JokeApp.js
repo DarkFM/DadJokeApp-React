@@ -64,9 +64,13 @@ export default class JokeApp extends Component {
             const promise = fetch(request).then(resp => resp.json());
             promises.push(promise);
         }
-        return Promise.all(promises).then(data =>
-            data.reduce((acc, { id, joke }) => [...acc, { id, joke, vote: 0 }], [])
-        );
+        try {
+            return Promise.all(promises).then(data =>
+                data.reduce((acc, { id, joke }) => [...acc, { id, joke, vote: 0 }], [])
+            );
+        } catch (error) {
+            alert('Network error. Refresh page to try again');
+        }
     }
 
     render() {
