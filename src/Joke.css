@@ -1,0 +1,49 @@
+.Joke {
+    padding: 15px 15px;
+    display: flex;
+}
+
+.Joke + .Joke {
+    border-top: rgba(173, 173, 173, 0.384) solid 1px;
+}
+
+.Joke-btn-group {
+    flex: 0 1 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Joke-btn-group span {
+    display: inline-block;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.Joke-btn-group i {
+    cursor: pointer;
+    color: rgb(146, 145, 145);
+    transition: transform 0.3s ease;
+}
+
+.Joke-btn-group i:active {
+    transform: translateY(2px);
+}
+
+.Joke-text {
+    flex: 0 0 70%;
+}
+
+.Joke-img-container {
+    flex: 0 0 10%;
+    font-size: 3rem;
+    padding: 0;
+    text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.1), -3px 5px 6px rgba(0, 0, 0, 0.1);
+}

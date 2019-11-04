@@ -1,0 +1,147 @@
+.JokeApp {
+    min-width: 75%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.JokeApp-sidebar {
+    flex: 0 1 25%;
+    height: 80vh;
+    background-color: rgb(179, 100, 199);
+    display: flex;
+    flex-flow: column nowrap;
+    color: white;
+    justify-content: center;
+    z-index: 1;
+    padding: 0 20px;
+    box-shadow: 0px 11px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.JokeApp-sidebar > * + * {
+    margin-top: 30px;
+}
+
+.JokeApp-joke-container {
+    flex: 1;
+    box-shadow: 0px 11px 15px 0px rgba(0, 0, 0, 0.5);
+    height: 70vh;
+    align-self: center;
+    overflow-y: scroll;
+    background-color: whitesmoke;
+}
+
+.JokeApp-joke-container::-webkit-scrollbar {
+    width: 2px !important;
+    display: none;
+}
+
+.JokeApp-title {
+    font-weight: bolder;
+}
+
+.JokeApp-thin-header {
+    font-family: cursive;
+    letter-spacing: 0.3ch;
+    font-weight: 300;
+}
+
+.JokeApp-emoji-container {
+    background-color: inherit;
+    border-radius: 50%;
+    padding: 10px;
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 11px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+.JokeApp-emoji-container span {
+    font-size: 6rem;
+    width: 100%;
+    display: inline-block;
+}
+
+.JokeApp-newjoke-btn {
+    border: none;
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 15px 20px;
+    letter-spacing: 0.3ch;
+    background: rgb(62, 181, 218);
+    background: linear-gradient(
+        139deg,
+        rgba(62, 181, 218, 1) 0%,
+        rgba(62, 181, 218, 1) 58%,
+        rgba(204, 70, 126, 1) 58%
+    );
+    box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.1s ease;
+}
+
+.JokeApp-newjoke-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.JokeApp-lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.JokeApp-lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.JokeApp-lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.JokeApp-lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.JokeApp-lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.JokeApp-lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(19px, 0);
+    }
+}
