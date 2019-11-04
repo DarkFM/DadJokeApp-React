@@ -35,7 +35,6 @@ export default class Joke extends Component {
                 red = 0;
             }
         }
-        // console.log(this.padString(red.toString(16)) + this.padString(green.toString(16)) + '00');
         return this.padString(red.toString(16)) + this.padString(green.toString(16)) + '00';
     }
 

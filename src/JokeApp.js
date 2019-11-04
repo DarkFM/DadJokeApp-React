@@ -40,9 +40,9 @@ export default class JokeApp extends Component {
         this.setState({ isLoading: true });
         this.getJokes(10)
             .then(jokes => {
-                const filteredJokes = jokes.filter(j =>
-                    this.state.jokes.every(storedJoke => storedJoke.id !== j.id)
-                );
+                const ids = this.state.jokes.map(j => j.id);
+                const set = new Set(ids);
+                const filteredJokes = jokes.filter(joke => !set.has(joke.id));
                 const storedJokes = JSON.parse(localStorage.getItem(STORAGE_NAME));
                 const newJokes = [...filteredJokes, ...storedJokes].sort((a, b) => b.vote - a.vote);
                 localStorage.setItem(STORAGE_NAME, JSON.stringify(newJokes));
